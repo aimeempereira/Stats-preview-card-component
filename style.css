@@ -1,0 +1,148 @@
+:root {
+  --main-background:hsl(233, 47%, 7%);
+  --card-background:hsl(244, 38%, 16%);
+  --accent-color:hsl(277, 64%, 61%);
+  --white:hsl(0, 0%, 100%);
+  --slightly-transparent-white:hsla(0, 0%, 100%, 0.75);
+  --transparent-white:hsla(0, 0%, 100%, 0.6);
+  font-size: 15px;
+}
+
+body {
+  background:var(--main-background);
+}
+
+.stats {
+  text-transform: uppercase;
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 200;
+}
+
+.bold {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: var(--white);
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+p:not(.stats) {
+  line-height: 1.8em;
+}
+
+.light-text, .light-text-stats{
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color:var(--slightly-transparent-white);
+}
+
+.accent-color {
+  color: var(--accent-color);
+}
+
+.card-grid {
+  width:80vw;
+  max-width: 1152px;
+  height: auto;
+  background: var(--card-background);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin:9em auto;
+}
+
+.image-container {
+ background-color: var(--accent-color);
+ background-image: url(images/image-header-desktop.jpg);
+ background-position: right center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-blend-mode:multiply;
+  border-radius: 0 10px 10px 0;
+}
+
+.image-filter {
+  width: 100%;
+  height: 100%;
+  background: var(--accent-color);
+  background-size:cover;
+  opacity: 0.2;
+  border-radius: 0 10px 10px 0;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding:2.5em 5em;
+}
+
+.number-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5em 0 1.5em 0;
+  gap:0.8em;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap:0.4em;
+}
+.bold-stats {
+  font-size: 1.5em;
+}
+
+.attribution {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size:0.8em;
+  text-align: center;
+  color: var(--slightly-transparent-white);
+}
+
+.attribution a {
+  text-decoration: none;
+  color: var(--accent-color);
+  transition: 0.8s;
+}
+
+.attribution a:hover {
+  background-color: var(--accent-color);
+  color: var(--white);
+  transition: 0.8s;
+}
+
+@media only screen and (max-width: 680px) {
+  .card-grid {
+    width: 85vw;
+  height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    margin: 3em auto;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+  .image-container {
+    grid-row-start: 1;
+    border-radius: 10px 10px 0 0;
+    background-position:center top;
+  }
+  .image-filter {
+    border-radius: 10px 10px 0 0;
+  }
+  .info-container {
+    text-align: center;
+    padding:1em;
+  }
+  .number-container {
+    flex-direction: column;
+    padding: 0.5em 0;
+    gap:0em;
+  }
+}
